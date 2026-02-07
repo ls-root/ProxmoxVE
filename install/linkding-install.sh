@@ -21,7 +21,9 @@ install_packages_with_retry build-essential \
   libsqlite3-dev \
   libffi-dev \
   wget \
-  unzip
+  unzip \
+  chromium \
+  python3-dev 
 msg_ok "Installed dependencies"
 
 PYTHON_VERSION="3.13" setup_uv
