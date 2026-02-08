@@ -53,7 +53,7 @@ unzip -q sqlite-amalgamation-3430000.zip
 cp sqlite-amalgamation-3430000/sqlite3.h .
 cp sqlite-amalgamation-3430000/sqlite3ext.h .
 wget -q https://www.sqlite.org/src/raw/ext/icu/icu.c?name=91c021c7e3e8bbba286960810fa303295c622e323567b2e6def4ce58e4466e60 -O icu.c
-$STD gcc -fPIC -shared icu.c "$(pkg-config --libs --cflags icu-uc icu-io)" -o libicu.so
+$STD gcc -fPIC -shared icu.c $(pkg-config --cflags icu-uc icu-io) -o libicu.so $(pkg-config --libs icu-uc icu-io)
 msg_ok "ICU extension compiled"
 
 msg_info "Installing single-file-cli"
